@@ -1,7 +1,7 @@
 ~ $ history
     1  kubectl get pods -n kube-system
     2  aws eks update-kubeconfig --region <tu-region> --name <nombre-cluster>
-    3  aws eks update-kubeconfig --region us-east-1 --name eks-demo
+
     4  kubectl get pods -n kube-system
     5  kubectl config get-contexts
     6  kubectl config current-context
@@ -10,16 +10,17 @@
     9  kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/release-1.18/config/v1.18/aws-k8s-cni.yaml
    10  sudo kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/release-1.18/config/v1.18/aws-k8s-cni.yaml
    11  eksctl utils update-cni --cluster <nombre-cluster> --region <tu-region> --approve
-   12  eksctl utils update-cni --cluster eks-demo --region us-east-1 --approve
+
    13  kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.18.2/config/master/aws-k8s-cni.yaml
    14  eksctl version
    15  curl --silent --location "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
    16  sudo mv /tmp/eksctl /usr/local/bin
    17  eksctl version
-   18  eksctl utils update-cni --cluster eks-demo --region us-east-1 --approve
-   19  eksctl get addon --cluster eks-demo --region us-east-1
-   20  eksctl create addon --name vpc-cni --cluster eks-demo --region us-east-1 --force
+   18  eksctl utils update-cni --cluster <name-cluster> --region <region> --approve
+   19  eksctl get addon --cluster <name-cluster> --region <region>
+   20  eksctl create addon --name vpc-cni --cluster <name-cluster> --region <region> --force
    21  kubectl get pods -n kube-system
    22  kubectl get nodes
    23  kubectl get pods -n kube-system
+
    24  kubectl get nodes
